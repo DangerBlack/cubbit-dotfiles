@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
-grep -qF -- 'alias cubbit="cd ~/cubbit"' ~/.bashrc || echo 'alias cubbit="cd ~/cubbit"' >> ~/.bashrc
-grep -qF -- 'alias cubbit-tilt="cubbit && tilt -f coordinator/Tiltfile"' ~/.bashrc || echo 'alias cubbit-tilt="cubbit && tilt -f coordinator/Tiltfile"' >> ~/.bashrc
-grep -qF -- 'alias cup="cubbit-tilt up"' ~/.bashrc || echo 'alias cup="cubbit-tilt up"' >> ~/.bashrc
-grep -qF -- 'alias cdown="cubbit-tilt down"' ~/.bashrc || echo 'alias cdown="cubbit-tilt down"' >> ~/.bashrc
+grep -qF -- "alias ttd='tilt -f coordinator/Tiltfile down" ~/.bashrc || echo "alias ttd='tilt -f coordinator/Tiltfile down'"  >> ~/.bashrc
+grep -qF -- "alias ttu='tilt -f coordinator/Tiltfile up'" ~/.bashrc || echo "alias ttu='tilt -f coordinator/Tiltfile up'"  >> ~/.bashrc
+grep -qF -- "alias gaz='bazel run //:gazelle'" ~/.bashrc || echo "alias gaz='bazel run //:gazelle'"  >> ~/.bashrc
+
+# Install starship
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f
+
+mkdir -p /home/coder/.config/
+echo 'scan_timeout = 100\ncommand_timeout = 500\n\n[nodejs]\nformat = "[$version](bold green) "\n\n[git_branch]\nsymbol = "🌱 "\n\n[git_status]\nconflicted = "��"\nahead = "⇡${count}"\nbehind = "⇣${count}"\ndiverged = "⇕⇡${ahead_count}⇣${behind_count}"\nuntracked = "🤷‍"\nstashed = "📦"\nmodified = "📝"\nstaged = '[++\($count\)](green)'\nrenamed = "👅"\ndeleted = "🗑"' > /home/coder/.config/starship.toml
 
 source ~/.bashrc
