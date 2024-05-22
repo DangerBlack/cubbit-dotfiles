@@ -13,6 +13,5 @@ mkdir -p /home/coder/.config/
 
 pwd
 cp starship.toml /home/coder/.config/starship.toml
-# echo -e "scan_timeout = 100\ncommand_timeout = 500\n\n[nodejs]\nformat = \"[\$version](bold green) \"\n\n[git_branch]\nsymbol = \"🌱 \"\n\n[git_status]\nconflicted = \"��\"\nahead = \"⇡\${count}\"\nbehind = \"⇣\${count}\"\ndiverged = \"⇕⇡\${ahead_count}⇣\${behind_count}\"\nuntracked = \"🤷‍\"\nstashed = \"📦\"\nmodified = \"📝\"\nstaged = '[++\(\$count\)](green)'\nrenamed = \"👅\"\ndeleted = \"🗑\"" > /home/coder/.config/starship.toml
 
 source ~/.bashrc
