@@ -1,0 +1,20 @@
+scan_timeout = 100
+command_timeout = 500
+
+[nodejs]
+format = "[$version](bold green) "
+
+[git_branch]
+symbol = "🌱 "
+
+[git_status]
+conflicted = "��"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
