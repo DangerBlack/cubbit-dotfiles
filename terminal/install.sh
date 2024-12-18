@@ -14,4 +14,6 @@ echo -e "scan_timeout = 100\ncommand_timeout = 500\n\n[nodejs]\nformat = \"[\$ve
 
 sudo apt install -y screen
 
+go install github.com/swaggo/swag/cmd/swag@v1.16.2
+
 source ~/.bashrc
